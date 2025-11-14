@@ -22,6 +22,7 @@ from basic.views import sampleInfo
 from basic.views import dynamicResponse
 from basic.views import sum
 from basic.views import subtract
+from basic.views import health,addstudent,addpost
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,5 +31,8 @@ urlpatterns = [
     path('info/',sampleInfo),
     path('dynamic/',dynamicResponse),
     path('sum/',sum),
-    path('sub/',subtract)
+    path('sub/',subtract),
+    path('health/',health),
+    path('addstudent/',addstudent),
+    path('addpost/',addpost)
 ]

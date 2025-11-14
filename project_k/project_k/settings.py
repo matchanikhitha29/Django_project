@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-32c0w6l7#ajgpbx%u8g8ne0ysh6k7jyqf52q=8$t^5k_4$#*zm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-project-1-p3zd.onrender.com']
+ALLOWED_HOSTS = []
+# 'django-project-1-p3zd.onrender.com'
 
 
 # Application definition
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'project_k',
+    'basic'
 ]
 
 MIDDLEWARE = [
@@ -48,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'basic.middleware.basicMiddleware'
 ]
 
 ROOT_URLCONF = 'project_k.urls'
@@ -76,8 +79,15 @@ WSGI_APPLICATION = 'project_k.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': "53r_54r",
+        'USER':'root',
+        'PASSWORD':'Nikhitha@123',
+        'HOST':'localhost',
+        'PORT':"3306",
+        'OPTIONS':{'charset':'utf8mb4',
+                   'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
+                   }
     }
 }
 
